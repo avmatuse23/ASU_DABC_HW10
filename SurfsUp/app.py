@@ -130,7 +130,7 @@ def start(start, end):
     """Return a list of min, max, avg temperature observations"""
     # Using the start and end date, calculate the lowest, highest, and average temperature.
     tobs = session.query(Measurement.tobs).filter(Measurement.date >= dt.date(start)).\
-    .filter(Measurement.date <= dt.date(end)).all()
+    filter(Measurement.date <= dt.date(end)).all()
     list_tobs = []
     tobs_min = list_tobs.append(min(tobs))
     tobs_max = list_tobs.append(max(tobs))
